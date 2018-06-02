@@ -16,12 +16,17 @@
 
     "params": {
         "Title": "Lanyon",
-        "Tagline": "A Jekyll theme",
-        "Author": "Mark Otto",
+        "Tagline": "An IndieWeb Lanyon theme for Hugo",
+        "Author": "Cole Lyman",
         "DateForm": "Jan 2 2006",
         "Github": {
-            "Url": "http://github.com/tummychow/lanyon-hugo",
+            "Url": "http://github.com/Colelyman/indieweb-lanyon-hugo",
             "Head": "master"
+        },
+        "Handles": {
+            "Twitter": "colelyman",
+            "Github": "Colelyman",
+            "Email": "cole@colelyman.com"
         }
     }
 }
