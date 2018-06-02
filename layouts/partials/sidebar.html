@@ -32,11 +32,11 @@
       {{ with .Site.Params.Handles.Github }}
       <li><a rel="me" href="https://github.com/{{ . }}"><i class="fab fa-github"></i></a></li>
       {{ end }}
-      {{ with .Site.Params.Handles.Email }}
-      <li><a rel="me" href="mailto:{{ . }}"><i class="fas fa-at"></i></a></li>
-      {{ end }}
       {{ with .Site.Params.Handles.GooglePlus }}
       <li><a rel="me" href="https://google.com/+{{ . }}"><i class="fab fa-google-plus"></i></a></li>
+      {{ end }}
+      {{ with .Site.Params.Handles.Email }}
+      <li><a rel="me" class="u-email" href="mailto:{{ . }}"><i class="fas fa-at"></i></a></li>
       {{ end }}
   </ul>
 
