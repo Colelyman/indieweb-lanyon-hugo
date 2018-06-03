@@ -29,6 +29,7 @@
             "Email": "cole@colelyman.com"
         },
         "Webmention": {
+            "Domain": "http://colelyman.com/",
             "Endpoint": "https://webmention.io/",
             "Account": "colelyman.com"
         }
