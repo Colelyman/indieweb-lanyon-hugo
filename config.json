@@ -27,6 +27,10 @@
             "Twitter": "colelyman",
             "Github": "Colelyman",
             "Email": "cole@colelyman.com"
+        },
+        "Webmention": {
+            "Endpoint": "https://webmention.io/",
+            "Account": "colelyman.com"
         }
     }
 }

@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
-    {{ if eq .URL "/" }}
+      {{ if eq .URL "/" }}
       {{ .Site.Params.Title }} &middot; {{ .Site.Params.Tagline }}
-    {{ else }}
+      {{ else }}
       {{ .Title }} &middot; {{ .Site.Params.Title }}
-    {{ end }}
+      {{ end }}
   </title>
 
   <!-- CSS -->
@@ -26,5 +26,15 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Authentication via indieauth.com -->
+  <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+  <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+
+  {{ with .Site.Params.Webmention }}
+  <!-- Webmentions (signup at https://webmention.io -->
+  {{ printf `<link rel="pingback" href="%s%s/xmlrpc" />` .endpoint .account | safeHTML }}
+  {{ printf `<link rel="webmention" href="%s%s/webmention" />` .endpoint .account | safeHTML }}
+  {{ end }}
 
 </head>
