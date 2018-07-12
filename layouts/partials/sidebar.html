@@ -5,42 +5,45 @@
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
   <div class="sidebar-item">
-    <p>{{ .Site.Params.SidebarTagline }}</p>
+    <p>{{ .Site.Params.SidebarTagline -}}</p>
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item {{ if eq .URL "/" }} active {{ end }}" href="/">Home</a>
-    <a class="sidebar-nav-item {{ if eq .URL "/post/" }} active {{ end }}" href="/post">Posts</a>
+    <a class="sidebar-nav-item {{ if eq .URL "/" -}} active {{ end -}}" href="/">Home</a>
+    <a class="sidebar-nav-item {{ if eq .URL "/post/" -}} active {{ end -}}" href="/post">Posts</a>
 
-    {{ $thisperma := .Permalink }}
-    {{ range .Site.Pages.ByWeight }}
-      {{ if isset .Params "sidebar" }}
-        <a class="sidebar-nav-item {{ if eq .Permalink $thisperma }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
-      {{ end }}
-    {{ end }}
+    {{ $thisperma := .Permalink -}}
+    {{ range .Site.Pages.ByWeight -}}
+      {{ if isset .Params "sidebar" -}}
+        <a class="sidebar-nav-item {{ if eq .Permalink $thisperma -}} active {{ end -}}" href="{{ .Permalink -}}">{{ .Title -}}</a>
+      {{ end -}}
+    {{ end -}}
 
-    <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url }}/archive/{{ .Site.Params.Github.Head }}.zip">Download</a>
-    <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url }}">GitHub project</a>
-    <span class="sidebar-nav-item">Currently on {{ .Site.Params.Github.Head }}</span>
+    <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url -}}/archive/{{ .Site.Params.Github.Head -}}.zip">Download</a>
+    <a class="sidebar-nav-item" href="{{ .Site.Params.Github.Url -}}">GitHub project</a>
+    <span class="sidebar-nav-item">Currently on {{ .Site.Params.Github.Head -}}</span>
   </nav>
 
   <ul class="sidebar-social">
       <!-- Web Sign-in (http://microformats.org/wiki/web-sign-in) -->
-      {{ with .Site.Params.Handles.Twitter }}
-      <li><a rel="me" href="https://twitter.com/{{ . }}"><i class="fab fa-twitter"></i></a></li>
-      {{ end }}
-      {{ with .Site.Params.Handles.Github }}
-      <li><a rel="me" href="https://github.com/{{ . }}"><i class="fab fa-github"></i></a></li>
-      {{ end }}
-      {{ with .Site.Params.Handles.GooglePlus }}
-      <li><a rel="me" href="https://google.com/+{{ . }}"><i class="fab fa-google-plus"></i></a></li>
-      {{ end }}
-      {{ with .Site.Params.Handles.Email }}
-      <li><a rel="me" class="u-email" href="mailto:{{ . }}"><i class="fas fa-at"></i></a></li>
-      {{ end }}
+      {{ with .Site.Params.Handles.Twitter -}}
+      <li><a rel="me" href="https://twitter.com/{{ . -}}"><i class="fab fa-twitter"></i></a></li>
+      {{ end -}}
+      {{ with .Site.Params.Handles.Github -}}
+      <li><a rel="me" href="https://github.com/{{ . -}}"><i class="fab fa-github"></i></a></li>
+      {{ end -}}
+      {{ with .Site.Params.Handles.GooglePlus -}}
+      <li><a rel="me" href="https://google.com/+{{ . -}}"><i class="fab fa-google-plus"></i></a></li>
+      {{ end -}}
+      {{ with .Site.Params.Handles.Email -}}
+      <li><a rel="me" class="u-email" href="mailto:{{ . -}}"><i class="fas fa-at"></i></a></li>
+      {{ end -}}
+      {{ range .AlternativeOutputFormats -}}
+      {{ printf `<li><a href="%s"><i class="fas fa-rss"></i></a></li>` .Permalink | safeHTML }}
+      {{ end -}}
   </ul>
 
   <div class="sidebar-item">
-    <p>&copy; {{ .Site.LastChange.Year }}. All rights reserved.</p>
+    <p>&copy; {{ .Site.LastChange.Year -}}. All rights reserved.</p>
   </div>
 </div>

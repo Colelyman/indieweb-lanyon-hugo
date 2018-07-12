@@ -194,13 +194,13 @@ a.sidebar-nav-item:focus {
 .sidebar-social {
   list-style-type: none;
   margin: 0;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   overflow: hidden;
   font-size: 1.5rem;
 }
 .sidebar-social li {
   float: left;
-  padding: 1rem;
+  padding: 1rem 1rem 0rem 0rem;
 }
 
 @media (min-width: 48em) {
