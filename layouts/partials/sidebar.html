@@ -38,7 +38,7 @@
       {{ with .Site.Params.Handles.Email -}}
       <li><a rel="me" class="u-email" href="mailto:{{ . -}}"><i class="fas fa-at"></i></a></li>
       {{ end -}}
-      {{ range .AlternativeOutputFormats -}}
+      {{ range first 1 .AlternativeOutputFormats -}}
       {{ printf `<li><a href="%s"><i class="fas fa-rss"></i></a></li>` .Permalink | safeHTML }}
       {{ end -}}
   </ul>
