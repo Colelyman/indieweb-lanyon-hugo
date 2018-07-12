@@ -17,10 +17,11 @@
     "params": {
         "Title": "Lanyon",
         "Tagline": "An IndieWeb Lanyon theme for Hugo",
+        "SidebarTagline": "A Hugo theme that supports some of the IndieWeb standards like web-signin, h-entries, and webmentions out of the box!",
         "Author": "Cole Lyman",
         "DateForm": "Jan 2 2006",
         "Github": {
-            "Url": "http://github.com/Colelyman/indieweb-lanyon-hugo",
+            "Url": "https://github.com/Colelyman/indieweb-lanyon-hugo",
             "Head": "master"
         },
         "Handles": {
