@@ -9,8 +9,15 @@
   </div>
 
   <nav class="sidebar-nav">
+<<<<<<< Updated upstream
     <a class="sidebar-nav-item {{ if eq .URL "/" }} active {{ end }}" href="/">Home</a>
     <a class="sidebar-nav-item {{ if eq .URL "/post/" }} active {{ end }}" href="/post">Posts</a>
+=======
+    <a class="sidebar-nav-item {{ if eq .URL "/" -}} active {{ end -}}" href="/">Home</a>
+    {{ range .Site.Sections -}}
+      <a class="sidebar-nav-item {{ if eq .URL .Permalink -}} active {{ end -}}" href="{{ .Permalink -}}">{{ .Title -}}</a>
+    {{ end -}}
+>>>>>>> Stashed changes
 
     {{ $thisperma := .Permalink }}
     {{ range .Site.Pages.ByWeight }}
