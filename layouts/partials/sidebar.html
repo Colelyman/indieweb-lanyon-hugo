@@ -10,11 +10,11 @@
 
   <nav class="sidebar-nav">
     <a class="sidebar-nav-item {{ if eq .URL "/" -}} active {{ end -}}" href="/">Home</a>
+    {{ $thisperma := .Permalink -}}
     {{ range .Site.Sections -}}
-      <a class="sidebar-nav-item {{ if eq .URL .Permalink -}} active {{ end -}}" href="{{ .Permalink -}}">{{ .Title -}}</a>
+      <a class="sidebar-nav-item {{ if eq .Permalink $thisperma -}} active {{ end -}}" href="{{ .Permalink -}}">{{ .Title -}}</a>
     {{ end -}}
 
-    {{ $thisperma := .Permalink -}}
     {{ range .Site.Pages.ByWeight -}}
       {{ if isset .Params "sidebar" -}}
         <a class="sidebar-nav-item {{ if eq .Permalink $thisperma -}} active {{ end -}}" href="{{ .Permalink -}}">{{ .Title -}}</a>
