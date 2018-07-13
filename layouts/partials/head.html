@@ -25,16 +25,18 @@
   <link rel="shortcut icon" href="/assets/favicon.ico">
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  {{ range .AlternativeOutputFormats -}}
+      {{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Params.Title | safeHTML }}
+  {{ end -}}
 
   <!-- Authentication via indieauth.com -->
   <link rel="authorization_endpoint" href="https://indieauth.com/auth">
   <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
 
-  {{ with .Site.Params.Webmention }}
+  {{ with .Site.Params.Webmention -}}
   <!-- Webmentions (signup at https://webmention.io -->
   {{ printf `<link rel="pingback" href="%s%s/xmlrpc" />` .endpoint .account | safeHTML }}
   {{ printf `<link rel="webmention" href="%s%s/webmention" />` .endpoint .account | safeHTML }}
-  {{ end }}
+  {{ end -}}
 
 </head>
